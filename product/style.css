@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background-color:rgb(156, 106, 30);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav .header-navbar{
+    display: flex;
+    list-style: none;
+}
+nav .header-navbar a{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+    display: block;
+    padding: 20px 40px;
+}
+nav h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: lighter;
+    color: aliceblue;
+}
+.hamburgur div{
+    width:30px;
+    background-color: aliceblue;
+    height: 5px;
+    margin-bottom: 3px;
+}
+.hamburgur{
+    display: none;
+}
+
+.moble-product{
+    display: grid;
+    grid-template-columns: repeat(3,minmax(200px,1fr));
+    column-gap: 10px;
+    padding: 10px;
+}
+.moble-product img{
+    height: 60%;
+    width: 100%;
+}
+.details-box{
+    height: 80%;
+    background-color: gray;
+    border: 3px solid gray;
+
+}
+.foot{
+    background-color: red;
+    padding: 10px;
+}
+.foot h2,.foot button{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.foot button{
+    padding: 20px 0;
+    width: 100%;
+    border: none;
+    background-color: burlywood;
+    color: black;
+    font-weight: bolder;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.foot button:hover{
+    opacity: 0.9;
+}
+.header-navbar-2{
+  background-color: #6c726e;
+  position: absolute;
+  width: 100%;
+  display: none;
+  z-index: 3;
+}
+.header-navbar-2 a{
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(255, 204, 0);
+    display: block;
+    padding: 10px 10px;
+    width: 100%;
+    font-size: 26px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+@media only screen and (max-width:623px){
+    .hamburgur{
+        display: block;
+        padding: 18px;
+    }
+    .header-navbar{
+        display: none;
+    }
+    nav .header-navbar{
+        display: none;
+    }
+    .moble-product{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    }
+}
+.header-navbar-2.tog{
+    display: block;
+}
+.foot1 img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    box-shadow: 3px 3px 3px coral;
+}
+footer{
+    background-color: forestgreen;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+}
+.cart-item1{
+    /* border: 0.5px solid #5f9ea0; */
+    box-shadow: 3px 3px 10px black;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.cart-item1 img{
+    width: 80%;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgb(74, 110, 110);
+    margin: 5px auto;
+    display: block;
+}
+.cart-item1 h1{
+    padding:30px 0 60px;
+    text-align: center;
+    color: black;
+}
+.cart-item1::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    left: -20px;
+    height: 50%;
+    top: -35%;
+    background-color: rgb(255, 255, 0);
+    z-index: -1;
+    border-radius: 50%;
+}
+.cart-item{
+    display: grid;
+    grid-template-columns:repeat( auto-fit,minmax(200px,1fr));
+    gap: 20px;
+    padding: 10px 30px;
+}
+.cart-item1-foot{
+    box-sizing: border-box;
+    padding: 30px;
+}
+.cart-item p{
+    line-height: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+.cart-item button{
+    display: block;
+    padding: 20px 0;
+    width: 100%;
+    margin: 30px 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #6c726e;
+    color:yellow;
+    font-weight: bolder;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transform-origin: left;
+    transition: transform 300ms;
+    border-radius: 30px 10px;
+
+}
+.cart-item button::after{
+   content: "";
+   position: absolute;
+   background-color: rgba(94, 95, 97, 0.356);
+   inset: 0 0 0 0;
+   transform-origin: left;
+   transform: scaleX(0);
+   transition: transform 300ms;
+   overflow: hidden;
+}
+.cart-item button:hover::after{
+    transform: scale(1);
+    transform-origin: right;
+}
